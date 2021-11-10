@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ButterflyMove : MonoBehaviour
 {
+
     public float speed = 1f;
     public GameObject prefab;
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider2d;
+    [SerializeField] private LayerMask platformLayerMask;
     
 
     void Awake()
@@ -31,10 +33,7 @@ public class ButterflyMove : MonoBehaviour
             bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
-        }
+        
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
         {
@@ -43,22 +42,36 @@ public class ButterflyMove : MonoBehaviour
 
         }
 
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += new Vector3(speed * -Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
-        }
+        HandleMovement();
+        
 
     }
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down * .1f);
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down * .1f, platformLayerMask);
+        //output to console:
         Debug.Log(raycastHit2d);
         return raycastHit2d.collider != null;
+    }
+
+    private void HandleMovement()
+    {
+        float moveSpeed = 5f;
+        if (Input.GetKey(KeyCode.A))
+        {
+            rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
+            }
+        }
     }
 }
