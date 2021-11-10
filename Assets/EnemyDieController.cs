@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class EnemyDieController : MonoBehaviour
 {
-    public Vector3 speed;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +13,11 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += speed*Time.deltaTime;
+        
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.name == "Walls")
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("PlrBullet"))
         {
             Destroy(gameObject);
         }
