@@ -35,14 +35,14 @@ public class ButterflyMove : MonoBehaviour
 
         
 
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             float jumpVelocity = 10f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
 
         }
 
-        HandleMovement();
+        if (IsGrounded()) HandleMovement();
         
 
     }
@@ -58,18 +58,19 @@ public class ButterflyMove : MonoBehaviour
     private void HandleMovement()
     {
         float moveSpeed = 5f;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
         }
         else
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
             }
             else
             {
+                //no keys being pressed
                 rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
             }
         }
