@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ButterflyMove : MonoBehaviour
 {
-
-    public Transform transform;
+    public float speed = 1f;
+    public GameObject prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -16,9 +16,34 @@ public class ButterflyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+
+        // make bullet
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position += new Vector3(0, 1, 0);
+            // spawn bullet
+            var bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+            Vector3 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 bulletTrajectory = (mouseLocation - transform.position).normalized;
+            bulletTrajectory.z = 0;
+            bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(speed * -Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+        }
+
     }
 }

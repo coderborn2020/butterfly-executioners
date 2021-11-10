@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 1370114350}
   - component: {fileID: 1370114349}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426a68c42272bc549b2ee6c54f6039ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 1370114352}
+  speed: 5
+  prefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
 --- !u!61 &1370114350
 BoxCollider2D:
   m_ObjectHideFlags: 0
