@@ -1035,6 +1035,10 @@ PrefabInstance:
       value: -0.010075331
       objectReference: {fileID: 0}
     - target: {fileID: -6552212235581503319, guid: f4e40d9059de04c449f4761ab4a899ee, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 87352715}
+    - target: {fileID: -6552212235581503319, guid: f4e40d9059de04c449f4761ab4a899ee, type: 3}
       propertyPath: rigidbody2D
       value: 
       objectReference: {fileID: 78674522}
