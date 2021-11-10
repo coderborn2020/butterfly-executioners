@@ -6,6 +6,8 @@ public class ButterflyMove : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject prefab;
+    private Rigidbody2D rigidbody;
+    
 
     // Start is called before the first frame update
     void Start()
