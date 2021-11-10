@@ -148,3 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   prefab: {fileID: 411267805111810803}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
