@@ -8,6 +8,7 @@ public class TopdownCameraScript : MonoBehaviour
     GameObject player;
     public Camera camera;
     public float camZoomRate = 1f;
+    public float minCamSize = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,9 @@ public class TopdownCameraScript : MonoBehaviour
         float avgDist = raycasts.Average(ray => ray.distance);
 
         // camera height is set in units of space
-        camera.orthographicSize = Mathf.MoveTowards(camera.orthographicSize, avgDist*iY, camZoomRate * Time.deltaTime);;
+        float camSize = Mathf.MoveTowards(camera.orthographicSize, avgDist*iY, camZoomRate * Time.deltaTime);
+        camSize = Mathf.Max(minCamSize, camSize);
+        camera.orthographicSize = camSize;
         camera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f) ;
 
     }
