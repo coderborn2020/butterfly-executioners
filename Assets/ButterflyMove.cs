@@ -26,18 +26,18 @@ public class ButterflyMove : MonoBehaviour
     {
 
         // make bullet
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             // spawn bullet
-            var bullet = Instantiate(prefab, transform.position, Quaternion.identity);
-            Vector3 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 bulletTrajectory = (mouseLocation - transform.position).normalized;
-            bulletTrajectory.z = 0;
-            bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
-        }
+        //    var bullet = Instantiate(prefab, transform.position, Quaternion.identity);
+        //    Vector3 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    Vector3 bulletTrajectory = (mouseLocation - transform.position).normalized;
+        //    bulletTrajectory.z = 0;
+        //    bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
+        //}
 
         
-        if (ctr == 0 || ctr >= 60)
+        if (ctr == 0 || ctr >= 90)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {

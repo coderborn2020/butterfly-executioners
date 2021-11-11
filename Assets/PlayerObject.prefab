@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5573917046871790146}
   - component: {fileID: -7481227957914765657}
   - component: {fileID: -1484499261994985503}
-  - component: {fileID: 8338551751681338034}
+  - component: {fileID: 3152749315702641888}
   m_Layer: 7
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5802fd13666a9df4f8579dc719c7f7af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbc5513c4acf47340a41da920078ac2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.5, y: 0.25}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &8338551751681338034
+--- !u!114 &3152749315702641888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +161,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 411267805111810803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a381616bee0aac749bbfcfbadbc8f693, type: 3}
+  m_Script: {fileID: 11500000, guid: a97b3d7d2aed7cc4f8318442cbb78600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 0.25
   firePoint: {fileID: 0}
+  bullets:
+  - {fileID: 0}
