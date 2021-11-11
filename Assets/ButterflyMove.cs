@@ -6,20 +6,23 @@ public class ButterflyMove : MonoBehaviour
 {
 
     public float speed = 1f;
+    private int ctr = 0;
     public GameObject prefab;
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider2d;
+    
     [SerializeField] private LayerMask platformLayerMask;
     
 
-    void Awake()
+
+    private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
         // make bullet
@@ -33,27 +36,45 @@ public class ButterflyMove : MonoBehaviour
             bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         }
 
+
+
+
+        
+            if (IsGrounded())
+            {
+                ctr = 0;
+                if (ctr == 0 && Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    float jumpVelocity = 10f;
+                    rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                    
+                }
+            }
+            
+            
+
+            if (!IsGrounded())
+            {
+                ctr++;
+            }
+        
         
 
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            float jumpVelocity = 10f;
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
-
-        }
-
-        if (IsGrounded()) HandleMovement();
+        HandleMovement();
         
 
     }
+
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down * .1f, platformLayerMask);
+        
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down , .1f, platformLayerMask);
         //output to console:
-        Debug.Log(raycastHit2d);
+        Debug.Log(raycastHit2d.collider);
         return raycastHit2d.collider != null;
     }
+
 
     private void HandleMovement()
     {
@@ -75,4 +96,5 @@ public class ButterflyMove : MonoBehaviour
             }
         }
     }
+
 }
