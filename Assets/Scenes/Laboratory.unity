@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 87352717}
   - component: {fileID: 87352718}
   - component: {fileID: 87352719}
+  - component: {fileID: 87352720}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -278,7 +279,19 @@ MonoBehaviour:
   rb: {fileID: 87352718}
   bulletPrefab: {fileID: 1664867563639214755, guid: 07dd0153345aac9428ba089c4956d35a, type: 3}
   bulletSpeed: 5
-  shootPeriod: 0.3
+  shootPeriod: 2
+--- !u!114 &87352720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87352713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf85d52e1c98874d9421ae0698ccf4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336189413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1122,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4e40d9059de04c449f4761ab4a899ee, type: 3}
+--- !u!1 &1306259776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1370685418362360674, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
+  m_PrefabInstance: {fileID: 1647239843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1306259784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306259776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5879fbae655fcf046a84dc5c51a380ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1306259785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306259776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7774159447454f64cbfa63061b3120d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 20
 --- !u!1001 &1647239843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1131,6 +1175,10 @@ PrefabInstance:
     - target: {fileID: -8229305157257570196, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
       propertyPath: m_Offset.y
       value: 0.00000013411045
+      objectReference: {fileID: 0}
+    - target: {fileID: -1938257755075597022, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
+      propertyPath: shootBulletSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1019623612346512906, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
       propertyPath: m_RootOrder
@@ -1192,6 +1240,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 87352715}
+    - target: {fileID: 7095198036478731126, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
+      propertyPath: minDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72c1220fa18f46f4dba4d213f585e793, type: 3}
 --- !u!1 &1921544848
