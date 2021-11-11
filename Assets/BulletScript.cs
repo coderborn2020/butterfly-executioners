@@ -5,6 +5,10 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public Vector3 speed;
+    public float fireRate = 0;
+    public float Damage = 10f;
+    public LayerMask notToHit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +20,6 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.position += speed*Time.deltaTime;
+        
     }
 }

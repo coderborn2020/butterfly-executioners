@@ -37,7 +37,7 @@ public class ButterflyMove : MonoBehaviour
         }
 
         
-        if (ctr == 0 || ctr >= 150)
+        if (ctr == 0 || ctr >= 60)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
