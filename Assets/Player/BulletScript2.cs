@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDie : MonoBehaviour
+public class BulletScript2 : MonoBehaviour
 {
     public Vector3 speed;
     public float fireRate = 0;

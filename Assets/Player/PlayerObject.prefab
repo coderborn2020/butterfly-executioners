@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7381664024504388835}
   - component: {fileID: 5573917046871790146}
   - component: {fileID: -7481227957914765657}
-  - component: {fileID: -1484499261994985503}
   - component: {fileID: 3152749315702641888}
   m_Layer: 7
   m_Name: PlayerObject
@@ -135,28 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1484499261994985503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411267805111810803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426a68c42272bc549b2ee6c54f6039ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  prefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
-  isFacingleft: 0
-  isFacingRight: 0
-  isGrounded: 0
-  isJumping: 0
-  spawnFacingLeft: 0
-  platformLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &3152749315702641888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 0.75
   firePoint: {fileID: 0}
-  bullets:
-  - {fileID: 0}
+  bullet: {fileID: 3014939983843393712, guid: a450af2ab2b92674eac8611dead3baf5, type: 3}
+  bulletDamage: 0

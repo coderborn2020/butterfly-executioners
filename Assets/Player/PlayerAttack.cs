@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private ButterflyMove butterflyMove;
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] bullets;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletDamage;
     private float coolDownTimer = Mathf.Infinity;
 
@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("Shoot");
         coolDownTimer = 0;
 
-        bullets[0].transform.position = firePoint.position;
-        bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        bullet.transform.position = firePoint.position;
+        bullet.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 }
