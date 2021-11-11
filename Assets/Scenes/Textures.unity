@@ -1979,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 1255734367}
     - target: {fileID: 3152749315702641888, guid: fc20e30298cc0e84c8afd2d3508f54e0, type: 3}
       propertyPath: attackCooldown
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3152749315702641888, guid: fc20e30298cc0e84c8afd2d3508f54e0, type: 3}
       propertyPath: bullets.Array.size

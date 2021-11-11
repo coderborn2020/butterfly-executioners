@@ -11,14 +11,58 @@ public class ButterflyMove : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider2d;
 
+
+    [HideInInspector]
+    public bool isFacingleft;
+    [HideInInspector]
+    public bool isFacingRight;
+    [HideInInspector]
+    public bool isGrounded;
+    [HideInInspector]
+    public bool isJumping;
+
+    public bool spawnFacingLeft;
     [SerializeField] private LayerMask platformLayerMask;
+    private Vector2 facingLeft;
+    private Vector2 facingRight;
 
 
+
+    void Start()
+    {
+        Initialization();
+    }
+
+    protected virtual void Initialization()
+    {
+        facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
+        if (spawnFacingLeft)
+        {
+            transform.localScale = facingLeft;
+            isFacingleft = true;
+        }
+        facingRight = new Vector2(+transform.localScale.x, transform.localScale.y);
+
+    }
 
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
+
+    }
+
+
+    protected virtual void Flip()
+    {
+        if (isFacingleft)
+        {
+            transform.localScale = facingLeft;
+        }
+        if (!isFacingleft)
+        {
+            transform.localScale = facingRight;
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +100,7 @@ public class ButterflyMove : MonoBehaviour
 
         HandleMovement();
 
+
     }
 
 
@@ -73,13 +118,19 @@ public class ButterflyMove : MonoBehaviour
         float moveSpeed = 5f;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
+            isFacingleft = true;
+            isFacingRight = false;
             rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
+            Flip();
         }
         else
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
+                isFacingRight = true;
+                isFacingleft = false;
                 rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
+                Flip();
             }
             else
             {

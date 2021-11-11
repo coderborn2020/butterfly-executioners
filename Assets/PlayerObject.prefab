@@ -149,6 +149,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   prefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
+  isFacingleft: 0
+  isFacingRight: 0
+  isGrounded: 0
+  isJumping: 0
+  spawnFacingLeft: 0
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -164,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97b3d7d2aed7cc4f8318442cbb78600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.25
+  attackCooldown: 0.75
   firePoint: {fileID: 0}
   bullets:
   - {fileID: 0}
