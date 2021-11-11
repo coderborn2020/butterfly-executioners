@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d42fe7e39b2abb4587b3d404b4324f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   moveSpeed: 2.5
   rb: {fileID: 6349364047817292206}
   movement: {x: 0, y: 0}
@@ -113,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
-  shootBulletSpeed: 0
+  shootBulletSpeed: 2
   shootBulletPeriod: 1
 --- !u!212 &-1176750566293918192
 SpriteRenderer:

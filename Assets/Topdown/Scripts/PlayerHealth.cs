@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth = 20;
-    public float curHealth;
+    public int maxHealth = 20;
+    public int curHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,10 @@ public class Health : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
             curHealth --;
-            //Destroy(gameObject);
+        }
+        if (curHealth < 1)
+        {
+            Destroy(gameObject);
         }
     }
 }
