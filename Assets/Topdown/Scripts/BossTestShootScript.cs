@@ -15,11 +15,12 @@ public class BossTestShootScript : MonoBehaviour
     private float fastAngle;
     private float slowShootableTime = 0f;
     private float fastShootableTime = 0f;
+    private EnemyBaseScript baseScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        baseScript = GetComponent<EnemyBaseScript>();
     }
 
     // Update is called once per frame
@@ -29,12 +30,12 @@ public class BossTestShootScript : MonoBehaviour
         slowAngle += angleChangeRate*Time.deltaTime*0.5f;
         fastAngle -= angleChangeRate*Time.deltaTime;
         
-        if (Time.time > slowShootableTime)
+        if (Time.time > slowShootableTime && baseScript.SeesPlayer)
         {
             slowShootableTime = Time.time + slowFireRate;
             ShootSlow();
         }
-        if (Time.time > fastShootableTime)
+        if (Time.time > fastShootableTime && baseScript.SeesPlayer)
         {
             fastShootableTime = Time.time + fastFireRate;
             ShootFast();

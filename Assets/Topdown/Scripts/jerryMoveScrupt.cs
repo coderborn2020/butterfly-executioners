@@ -5,57 +5,60 @@ using UnityEngine.UI;
 
 public class jerryMoveScrupt : MonoBehaviour
 {
-    //public GameObject Player;
     Transform player;
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Vector2 movement;
 
-    public float minDistance = 3f;
+    public float minDistance = 5f;
     public float range;
-
-    //public Vector2 bobSpeed = new Vector2(1, 1);
-    
-
-    // private float nextActionTime = 0.0f;
-    // public float period = 0.5f;
+    private EnemyBaseScript baseScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        minDistance += Random.Range(-2f, 2f); // make the jerries range a bit random although in a range from 3 to 7 by default
+        player = GameObject.Find("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
-        //rigidbody2D.velocity = bobSpeed;
+        baseScript = GetComponent<EnemyBaseScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector2 may be a problem, could have to be Vector3
-        Vector3 direction = player.position - transform.position;
-        Debug.Log(direction);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        range = Vector2.Distance(transform.position, player.position);
-        float step = -moveSpeed * Time.deltaTime;
-
-        if (range < minDistance) 
+        if (baseScript.SeesPlayer)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, step);
+            // behavior if Jerry knows where player is
+            Vector3 direction = player.position - transform.position;
+            Debug.Log(direction);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            // oculd rotate Jerry but it looks kind of weird so we don't
+            //rb.rotation = angle;
+            direction.Normalize();
+            movement = direction;
+            range = Vector2.Distance(transform.position, player.position);
+            float step = -moveSpeed * Time.deltaTime;
+
+            if (range < minDistance) 
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, step);
+            }
         }
-        // if (Time.time > nextActionTime ) {
-        //     nextActionTime += period;
-        //     // change bob speed
-        //     rigidbody2D.velocity = new Vector2(Random.Range(-1f*5, 1f*5), Random.Range(-1f*5, 1f*5));
-        // }
     }
 
     private void FixedUpdate() {
-        moveBob(movement);
+        moveJerry(movement);
     }
-    void moveBob(Vector2 direction) {
+    void moveJerry(Vector2 direction) {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+
+        if (Mathf.Abs(range - minDistance) < 0.5)
+        {
+            // if close to the ring around the player, move to the side
+            Vector2 diff = (transform.position - player.position).normalized;
+            Vector2 rotate90 = new Vector2(-diff.y, diff.x); // https://stackoverflow.com/questions/4780119/2d-euclidean-vector-rotations
+
+            rb.MovePosition(rb.position + rotate90*moveSpeed*Time.deltaTime); // magic numberdont care
+        }
     }
 }

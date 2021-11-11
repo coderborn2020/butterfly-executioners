@@ -5,40 +5,33 @@ using UnityEngine.UI;
 
 public class bobMoveScrupt : MonoBehaviour
 {
-    //public GameObject Player;
     Transform player;
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
+    private EnemyBaseScript baseScript;
     public Vector2 movement;
-    //public Vector2 bobSpeed = new Vector2(1, 1);
-    
-
-    // private float nextActionTime = 0.0f;
-    // public float period = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
-        //rigidbody2D.velocity = bobSpeed;
+        baseScript = GetComponent<EnemyBaseScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector2 may be a problem, could have to be Vector3
-        Vector3 direction = player.position - transform.position;
-        Debug.Log(direction);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        // if (Time.time > nextActionTime ) {
-        //     nextActionTime += period;
-        //     // change bob speed
-        //     rigidbody2D.velocity = new Vector2(Random.Range(-1f*5, 1f*5), Random.Range(-1f*5, 1f*5));
-        // }
+        if (baseScript.SeesPlayer)
+        {
+            // behavior if Bob knows where player is
+            Vector3 direction = player.position - transform.position;
+            Debug.Log(direction);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle+90f;
+            direction.Normalize();
+            movement = direction;
+        }
     }
 
     private void FixedUpdate() {
