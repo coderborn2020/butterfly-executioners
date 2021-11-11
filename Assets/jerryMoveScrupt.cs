@@ -10,6 +10,10 @@ public class jerryMoveScrupt : MonoBehaviour
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Vector2 movement;
+
+    public float minDistance = 4f;
+    public float range;
+
     //public Vector2 bobSpeed = new Vector2(1, 1);
     
 
@@ -33,6 +37,12 @@ public class jerryMoveScrupt : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
+        range = Vector2.Distance(transform.position, player.position);
+
+        if (range < minDistance) 
+        {
+            transform.position = Vector2.MoveTowards(transform.position, )
+        }
         // if (Time.time > nextActionTime ) {
         //     nextActionTime += period;
         //     // change bob speed
