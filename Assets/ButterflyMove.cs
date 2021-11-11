@@ -40,16 +40,18 @@ public class ButterflyMove : MonoBehaviour
 
 
 
-        if (IsGrounded())
-        {
-            ctr = 0;
-            if (ctr == 0 && Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                float jumpVelocity = 10f;
-                rigidbody2d.velocity = Vector2.up * jumpVelocity;
 
+        
+            if (ctr == 0 || ctr >= 150)
+            {
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    float jumpVelocity = 10f;
+                    rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                }
             }
-        }
+
+
 
 
 
@@ -57,6 +59,7 @@ public class ButterflyMove : MonoBehaviour
         {
             ctr++;
         }
+        else ctr = 0;
 
 
 
