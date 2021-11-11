@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1938257755075597022}
   - component: {fileID: -1176750566293918192}
   - component: {fileID: 7095198036478731126}
+  - component: {fileID: 2288236011531667236}
   m_Layer: 0
   m_Name: Jerry
   m_TagString: Untagged
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
-  shootBulletSpeed: 0
+  shootBulletSpeed: 2
   shootBulletPeriod: 1
 --- !u!212 &-1176750566293918192
 SpriteRenderer:
@@ -168,3 +169,15 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   minDistance: 4
   range: 0
+--- !u!114 &2288236011531667236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370685418362360674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5879fbae655fcf046a84dc5c51a380ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
