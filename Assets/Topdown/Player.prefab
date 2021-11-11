@@ -13,11 +13,9 @@ GameObject:
   - component: {fileID: 2824549732186611289}
   - component: {fileID: 2824549732186611290}
   - component: {fileID: 2824549732186611291}
-  - component: {fileID: 5271239004445860709}
-  - component: {fileID: 8985303574969933282}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49796447, y: 0.50100434}
+  m_Size: {x: 0.28197783, y: 0.28369918}
   m_EdgeRadius: 0
 --- !u!50 &2824549732186611290
 Rigidbody2D:
@@ -148,37 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3501234ea8d5f438e6b869c480ae1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   rb: {fileID: 2824549732186611290}
   bulletPrefab: {fileID: 1664867563639214755, guid: 07dd0153345aac9428ba089c4956d35a, type: 3}
-  bulletSpeed: 5
-  shootPeriod: 0.3
---- !u!320 &5271239004445860709
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2824549732186611293}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
---- !u!114 &8985303574969933282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2824549732186611293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf85d52e1c98874d9421ae0698ccf4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  bulletSpeed: 7
+  shootPeriod: 0.15

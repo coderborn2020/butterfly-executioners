@@ -20,7 +20,10 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Walls")
+        if (other.gameObject.name == "Walls" ||
+            (this.CompareTag("EnemyBullet") && other.gameObject.CompareTag("Player")) ||
+            (this.CompareTag("PlrBullet") && other.gameObject.CompareTag("Enemy"))
+        )
         {
             Destroy(gameObject);
         }

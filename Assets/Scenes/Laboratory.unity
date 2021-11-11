@@ -4109,26 +4109,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossTest
       objectReference: {fileID: 0}
-    - target: {fileID: 2148431327559782639, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
-      propertyPath: fastSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148431327559782639, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
-      propertyPath: slowSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148431327559782639, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
-      propertyPath: fastFireRate
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148431327559782639, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
-      propertyPath: slowFireRate
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148431327559782639, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
-      propertyPath: angleChangeRate
-      value: 130
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff80e7266abcdb94cbccf9abffcbc1f6, type: 3}
 --- !u!1 &1921544848
@@ -27094,17 +27074,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2824549732186611293, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2824549732186611295, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2824549732186611295, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.62
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2824549732186611295, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.86
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2824549732186611295, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27136,6 +27120,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824549732186611295, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271239004445860709, guid: cc387618aa679b947b9a8a01bfae4787, type: 3}
+      propertyPath: m_InitialState
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

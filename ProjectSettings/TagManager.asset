@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlrBullet
   - EnemyBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
