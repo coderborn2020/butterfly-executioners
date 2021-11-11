@@ -169,6 +169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 539112362}
     m_Modifications:
+    - target: {fileID: -1721657637434150255, guid: 18a3c38be8f0bca4a91dc21bffab94f7, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2436812679451921327, guid: 18a3c38be8f0bca4a91dc21bffab94f7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1004,7 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108670581}
   m_Layer: 7
-  m_Name: firePoint
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
