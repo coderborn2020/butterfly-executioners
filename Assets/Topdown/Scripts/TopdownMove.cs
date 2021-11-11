@@ -61,7 +61,7 @@ public class TopdownMove : MonoBehaviour
         Vector3 bulletTrajectory = (mouseLocation - transform.position);
         bulletTrajectory.z = 0;
         bullet.GetComponent<BulletScript>().speed = bulletTrajectory.normalized * bulletSpeed;
-        nextShootableTime += shootPeriod;
+        nextShootableTime = Time.time + shootPeriod;
         readyToShoot = false;
     }
 }

@@ -41,7 +41,7 @@ public class jerryMoveScrupt : MonoBehaviour
 
         if (range < minDistance) 
         {
-            transform.position = Vector2.MoveTowards(transform.position, )
+            //transform.position = Vector2.MoveTowards(transform.position, )
         }
         // if (Time.time > nextActionTime ) {
         //     nextActionTime += period;
