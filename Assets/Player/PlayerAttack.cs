@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] bullets;
+    [SerializeField] private float bulletDamage;
     private float coolDownTimer = Mathf.Infinity;
 
     private void Awake()
