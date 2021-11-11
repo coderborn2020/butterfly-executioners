@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class jerryMoveScrupt : MonoBehaviour
 {
     //public GameObject Player;
-    public Transform player;
+    Transform player;
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Vector2 movement;
@@ -23,6 +23,7 @@ public class jerryMoveScrupt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody2D>();
         //rigidbody2D.velocity = bobSpeed;
     }
