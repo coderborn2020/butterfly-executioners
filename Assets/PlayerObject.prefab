@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  prefab: {fileID: 411267805111810803}
+  prefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64

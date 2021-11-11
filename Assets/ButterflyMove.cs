@@ -36,23 +36,15 @@ public class ButterflyMove : MonoBehaviour
             bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         }
 
-
-
-
-
-
         
-            if (ctr == 0 || ctr >= 150)
+        if (ctr == 0 || ctr >= 150)
+        {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-                {
-                    float jumpVelocity = 10f;
-                    rigidbody2d.velocity = Vector2.up * jumpVelocity;
-                }
+                float jumpVelocity = 10f;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity;
             }
-
-
-
+        }
 
 
         if (!IsGrounded())
@@ -62,16 +54,13 @@ public class ButterflyMove : MonoBehaviour
         else ctr = 0;
 
 
-
         HandleMovement();
-
 
     }
 
 
     private bool IsGrounded()
     {
-
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformLayerMask);
         //output to console:
         Debug.Log(raycastHit2d.collider);
