@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 341435ddfe621dc42b0e3cb1b28c080d
   - enabled: 1
-    path: Assets/Scenes/Laboratory.unity
-    guid: f6bc3812a2fcf3e4396e546ae12478b7
+    path: Assets/Scenes/TPLevels/Laboratory.unity
+    guid: cb2aba3f9740e76418256efffe407091
   - enabled: 1
-    path: Assets/Scenes/Platformer1.unity
-    guid: 854e512d9c9b6c44b8ac8f3346bc9e78
+    path: Assets/Scenes/PFLevels/Platformer2.unity
+    guid: 62638aeea8889d343a2810c385b5d748
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: db42e1befda7879449a810d13838f337
   m_configObjects: {}

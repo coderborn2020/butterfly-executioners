@@ -83,15 +83,13 @@ public class ButterflyMove : MonoBehaviour
         //    bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         //}
 
-        
-        if (ctr == 0 || ctr >= 90)
-        {
+
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 float jumpVelocity = 5f;
                 rigidbody2d.velocity = Vector2.up * jumpVelocity;
             }
-        }
+        
 
 
         if (!IsGrounded())
@@ -120,7 +118,6 @@ public class ButterflyMove : MonoBehaviour
     {
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformLayerMask);
         //output to console:
-        Debug.Log(raycastHit2d.collider);
         return raycastHit2d.collider != null;
     }
 
