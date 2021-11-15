@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7400228807792287435}
   - component: {fileID: 583536174628119401}
-  - component: {fileID: 5133031521318432780}
   - component: {fileID: 4093128897335732905}
   - component: {fileID: 6422643847196369582}
+  - component: {fileID: -8476524268225883059}
   m_Layer: 0
   m_Name: PlrBullet
   m_TagString: PlrBullet
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5133031521318432780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664867563639214755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755885db2695dfc4cae421c3ecbea368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 0}
 --- !u!58 &4093128897335732905
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,3 +124,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8476524268225883059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664867563639214755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a0099ca298621468f83bed4d3d8382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0, z: 0}

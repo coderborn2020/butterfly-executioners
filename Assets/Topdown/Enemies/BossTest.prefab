@@ -166,7 +166,7 @@ MonoBehaviour:
   angleChangeRate: 130
   slowFireRate: 0.25
   fastFireRate: 0.12
-  bulletPrefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
+  bulletPrefab: {fileID: 3014939983843393712, guid: a450af2ab2b92674eac8611dead3baf5, type: 3}
 --- !u!114 &3187588448578980432
 MonoBehaviour:
   m_ObjectHideFlags: 0
