@@ -7,10 +7,14 @@ public class ButterflyMove : MonoBehaviour
 
     public float speed = 1f;
     private int ctr = 0;
-    public GameObject prefab;
+    public GameObject bulletPrefab;
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider2d;
 
+    public float shootPeriod = 2f;
+    public float bulletSpeed;
+    private bool readyToShoot = false;
+    private float nextShootableTime = 0.0f;
 
     [HideInInspector]
     public bool isFacingleft;
@@ -49,7 +53,6 @@ public class ButterflyMove : MonoBehaviour
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
-
     }
 
 
@@ -80,15 +83,13 @@ public class ButterflyMove : MonoBehaviour
         //    bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         //}
 
-        
-        if (ctr == 0 || ctr >= 90)
-        {
+
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 float jumpVelocity = 5f;
                 rigidbody2d.velocity = Vector2.up * jumpVelocity;
             }
-        }
+        
 
 
         if (!IsGrounded())
@@ -100,7 +101,16 @@ public class ButterflyMove : MonoBehaviour
 
         HandleMovement();
 
+        if (Input.GetMouseButton(0)) // left click
+        {
+            // make bullet
+            if (readyToShoot) Shoot();
+        }
 
+        if (Time.time > nextShootableTime)
+        {
+            readyToShoot = true;
+        }
     }
 
 
@@ -137,6 +147,18 @@ public class ButterflyMove : MonoBehaviour
                 rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
             }
         }
+    }
+
+    private void Shoot()
+    {
+        // spawn bullet
+        var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Vector3 mouseLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 bulletTrajectory = (mouseLocation - transform.position);
+        bulletTrajectory.z = 0;
+        bullet.GetComponent<BulletScript>().speed = bulletTrajectory.normalized * bulletSpeed;
+        nextShootableTime = Time.time + shootPeriod;
+        readyToShoot = false;
     }
 
 }
