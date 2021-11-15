@@ -85,7 +85,7 @@ public class ButterflyMove : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                float jumpVelocity = 10f;
+                float jumpVelocity = 5f;
                 rigidbody2d.velocity = Vector2.up * jumpVelocity;
             }
         }
