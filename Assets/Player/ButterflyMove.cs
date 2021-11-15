@@ -83,15 +83,13 @@ public class ButterflyMove : MonoBehaviour
         //    bullet.GetComponent<BulletScript>().speed = bulletTrajectory;
         //}
 
-        
-        if (ctr == 0 || ctr >= 90)
-        {
+
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 float jumpVelocity = 5f;
                 rigidbody2d.velocity = Vector2.up * jumpVelocity;
             }
-        }
+        
 
 
         if (!IsGrounded())
