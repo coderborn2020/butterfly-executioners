@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3014939983843393712, guid: a450af2ab2b92674eac8611dead3baf5, type: 3}
-  shootBulletSpeed: 0
+  shootBulletSpeed: 3
   shootBulletPeriod: 2
 --- !u!212 &-1176750566293918192
 SpriteRenderer:

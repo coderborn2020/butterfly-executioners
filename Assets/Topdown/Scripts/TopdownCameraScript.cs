@@ -6,9 +6,9 @@ using System.Linq;
 public class TopdownCameraScript : MonoBehaviour
 {
     GameObject player;
-    public Camera camera;
+    new public Camera camera;
     public float camZoomRate = 1f;
-    public float minCamSize = 2.5f;
+        public float minCamSize = 2.5f;
 
     // Start is called before the first frame update
     void Start()
