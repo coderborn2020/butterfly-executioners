@@ -7,6 +7,7 @@ TagManager:
   - PlrBullet
   - EnemyBullet
   - Enemy
+  - music
   layers:
   - Default
   - TransparentFX
