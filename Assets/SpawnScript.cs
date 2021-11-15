@@ -10,6 +10,7 @@ public class SpawnScript : MonoBehaviour
     string nextScene;
     Text respawnText;
     bool waitingForRespawn = false;
+    public MonoBehaviour moveScript;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class SpawnScript : MonoBehaviour
         respawnText.enabled = true;
         GetComponent<SpriteRenderer>().color = Color.black;
         GetComponent<Rigidbody2D>().velocity = new Vector2();
-        GetComponent<TopdownMove>().enabled = false;
+        moveScript.enabled = false;
         waitingForRespawn = true;
     }
 
@@ -49,7 +50,7 @@ public class SpawnScript : MonoBehaviour
         waitingForRespawn = false;
         SceneManager.LoadScene(currentScene);
         GetComponent<SpriteRenderer>().color = Color.white;
-        GetComponent<TopdownMove>().enabled = true;
+        moveScript.enabled = true;
     }
 
     public void NextLevel()
