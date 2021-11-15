@@ -22,7 +22,7 @@ public class BobShootScript : MonoBehaviour
     void Update()
     {
         if (Time.time > nextActionTime ) {
-            nextActionTime += shootBulletPeriod;
+            nextActionTime = Time.time + shootBulletPeriod;
             // execute block of code here
             ShootBullets();
         }

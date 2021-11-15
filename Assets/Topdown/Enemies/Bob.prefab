@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -8094393916022289551}
   m_Layer: 0
   m_Name: Bob
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5879fbae655fcf046a84dc5c51a380ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseHealth: 10
 --- !u!114 &-8094393916022289551
 MonoBehaviour:
   m_ObjectHideFlags: 0
