@@ -27,6 +27,10 @@ public class SpawnScript : MonoBehaviour
             case "Laboratory":
                 return "Platformer2";
             case "Platformer2":
+                return "Platformer3";
+            case "Platformer3":
+                return "Lab2";
+            case "Lab2":
                 return "WinScene";
             default:
                 Debug.LogError($"MISSING NEXT LEVEL AFTER LEVEL {currentScene}");
