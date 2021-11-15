@@ -7,7 +7,7 @@ public class TopdownMove : MonoBehaviour
     public float speed = 1f;
     public Rigidbody2D rb;
     public GameObject bulletPrefab;
-    public float bulletSpeed; // TODO: bugged, plz fix
+    public float bulletSpeed;
 
     public float shootPeriod = 2f;
     private bool readyToShoot = false;
