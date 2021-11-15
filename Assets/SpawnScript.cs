@@ -8,7 +8,7 @@ public class SpawnScript : MonoBehaviour
 {
     string currentScene;
     string nextScene;
-    Image respawnText;
+    Text respawnText;
     bool waitingForRespawn = false;
     public MonoBehaviour moveScript;
 
@@ -17,7 +17,7 @@ public class SpawnScript : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().name;
         nextScene = GetNextScene();
-        respawnText = GameObject.Find("RespawnImg").GetComponent<Image>();
+        respawnText = GameObject.Find("RespawnText").GetComponent<Text>();
     }
 
     string GetNextScene()
