@@ -17,7 +17,7 @@ TagManager:
   - Platforms
   - Player
   - Walls
-  - 
+  - Last
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 4091670117
     locked: 0
