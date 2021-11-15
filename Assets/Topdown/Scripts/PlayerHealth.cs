@@ -21,7 +21,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (curHealth < 1) Destroy(gameObject);
+        if (curHealth < 1) {
+            // die
+            this.GetComponent<SpawnScript>().OnDeath();
+        }
         if (curHealth > numOfHearts)
         {
             curHealth = numOfHearts;
