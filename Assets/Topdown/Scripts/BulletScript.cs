@@ -20,7 +20,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Walls" ||
+        if (other.gameObject.name == "Walls" || other.gameObject.name == "WallsNoCam" ||
             (this.CompareTag("EnemyBullet") && other.gameObject.CompareTag("Player")) ||
             (this.CompareTag("PlrBullet") && other.gameObject.CompareTag("Enemy"))
         )

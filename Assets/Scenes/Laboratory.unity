@@ -249,8 +249,8 @@ GameObject:
   - component: {fileID: 102954591}
   - component: {fileID: 102954590}
   - component: {fileID: 102954589}
-  m_Layer: 0
-  m_Name: Walls But No Camera
+  m_Layer: 9
+  m_Name: WallsNoCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
