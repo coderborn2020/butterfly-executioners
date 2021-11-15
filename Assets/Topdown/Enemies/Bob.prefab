@@ -110,12 +110,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370685418362360674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79011912b0839e74aa423ce91ab5fd53, type: 3}
+  m_Script: {fileID: 11500000, guid: ffb3f83200e37bb49be6c906245186bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1664867563639214755, guid: 5e32d62219a277b42959c2a733bde958, type: 3}
-  shootBulletSpeed: 4
-  shootBulletPeriod: 1
+  bulletPrefab: {fileID: 3014939983843393712, guid: a450af2ab2b92674eac8611dead3baf5, type: 3}
+  shootBulletSpeed: 0
+  shootBulletPeriod: 2
 --- !u!212 &-1176750566293918192
 SpriteRenderer:
   m_ObjectHideFlags: 0
