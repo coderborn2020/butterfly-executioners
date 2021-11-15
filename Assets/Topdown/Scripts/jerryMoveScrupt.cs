@@ -30,7 +30,6 @@ public class jerryMoveScrupt : MonoBehaviour
         {
             // behavior if Jerry knows where player is
             Vector3 direction = player.position - transform.position;
-            Debug.Log(direction);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             // oculd rotate Jerry but it looks kind of weird so we don't
             //rb.rotation = angle;

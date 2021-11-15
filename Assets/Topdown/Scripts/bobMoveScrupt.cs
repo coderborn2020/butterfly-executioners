@@ -26,7 +26,6 @@ public class bobMoveScrupt : MonoBehaviour
         {
             // behavior if Bob knows where player is
             Vector3 direction = player.position - transform.position;
-            Debug.Log(direction);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rb.rotation = angle+90f;
             direction.Normalize();
