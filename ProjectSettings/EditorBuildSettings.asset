@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 341435ddfe621dc42b0e3cb1b28c080d
   - enabled: 1
-    path: Assets/Scenes/Laboratory.unity
+    path: Assets/Scenes/TPLevels/Laboratory.unity
     guid: f6bc3812a2fcf3e4396e546ae12478b7
   - enabled: 1
-    path: Assets/Scenes/Platformer1.unity
+    path: Assets/Scenes/PFLevels/Platformer1.unity
     guid: 854e512d9c9b6c44b8ac8f3346bc9e78
   m_configObjects: {}
