@@ -22,7 +22,16 @@ public class SpawnScript : MonoBehaviour
 
     string GetNextScene()
     {
-        return "Platformer1";
+        switch (currentScene)
+        {
+            case "Laboratory":
+                return "Platformer2";
+            case "Platformer2":
+                return "WinScene";
+            default:
+                Debug.LogError($"MISSING NEXT LEVEL AFTER LEVEL {currentScene}");
+                return "MainMenu";
+        }
     }
 
     // Update is called once per frame
